@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet/style.css">
+    <title>TodoList</title>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="/">About</a>
+        <a href="#services">Services</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+
+    <main>
+    <header>
+        <h1>YourTodoList</h1>
+        <form action="/todos" method="post">
+            <input type="text" name="todoString" placeholder="Your todos goes here " id="input" required>
+            <button class="add">&#10010</button>
+        </form>
+    </header>
+    <div>
+
+
+       <div class="progress"style= "width:<%= todosLength-1 %>rem">
+           <div class="progress2"style="width: <%= doneTodoLength %>rem"> 
+           </div>
+       </div>
+
+
+        <div class="todoContainer">
+            <% let todoCount=0; let todoDoneCount=0; %> 
+            <% todos.forEach(todo=>{ %>
+      <% if(todo.done==false) {%>
+            <div class="todoElement" >
+                <form action="/done" id="done" method="POST" hidden>
+                    <input type="text" name="done" value=" ">
+                    <input type="text" name="id" value="<%= todo._id %>">
+                
+                </form>
+
+                <h4><%= todo.todoString %></h4>
+
+                <form action="/patch" method="POST" class="patch" hidden>
+                    <input type="text" name="updateTodoString" value="<%= todo.todoString %>" >
+                    <input type="text" name="todoString" value="<%= todo.todoString %>" hidden>
+                    <button style="visibility: hidden;"></button>
+               </form>
+
+                <button class="edit">&#x270E</button>
+
+                <form action="/delete" method="POST">
+                    <input type="text" name="todoString" value="<%= todo.todoString %>" hidden>
+                    <button class="delete">&#10006</button>
+                </form>
+
+            </div>
+
+            <% } %> 
+   <% if(todo.done==true) { %>
+
+            <div class="todoElement cut">
+                <form action="/done" id="done" method="POST" hidden>
+                    <input type="text" name="done" value=" ">
+                    <input type="text" name="id" value="<%= todo._id %>">
+                
+                </form>
+            
+                <h4>
+                    <%= todo.todoString %>
+                </h4>
+            
+                <form action="/patch" method="POST" class="patch" hidden>
+                    <input type="text" name="updateTodoString" value="<%= todo.todoString %>">
+                    <input type="text" name="todoString" value="<%= todo.todoString %>" hidden>
+                    <button style="visibility: hidden;"></button>
+                </form>
+            
+                <button class="edit">&#x270E</button>
+            
+                <form action="/delete" method="POST">
+                    <input type="text" name="todoString" value="<%= todo.todoString %>" hidden>
+                    <button class="delete">&#10006</button>
+                </form>
+            
+            </div>
+            
+            <% todoDoneCount++;}  %> 
+            <% todoCount++;}) %>
+           
+            <h3 class="counter" hidden>
+                <%= todoCount  %>
+            </h3>
+            <h3 class="donecounter" hidden>
+                <%= todoDoneCount %>
+            </h3>
+
+
+        </div>
+       
+    </div>
+    </main>
+    <script src="/script/work.js"></script>
+</body>
+</html>

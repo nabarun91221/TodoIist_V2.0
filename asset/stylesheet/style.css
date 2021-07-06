@@ -1,0 +1,173 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.todoElement {
+  width: 38rem;
+  height: fit-content;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.384);
+  box-shadow: 5px 0.1px 20px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.3s ease-out;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+#input {
+  width: 15rem;
+  height: 2.35rem;
+  border: none;
+  border-radius: 3px;
+  margin: 0px;
+  font-size: 15px;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding-left: 10px;
+}
+h4 {
+  width: auto;
+  font-size: 22px;
+  color: rgb(247, 247, 247);
+  padding-right: 1px;
+  margin-right: auto;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  overflow: auto;
+}
+h1 {
+  color: white;
+}
+button {
+  width: fit-content;
+  height: fit-content;
+  font-size: 18px;
+  margin: 2px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.add {
+  width: 35px;
+  height: fit-content;
+  padding: 1px;
+  padding-top: 1.8px;
+  padding-bottom: 8px;
+  background-color: white;
+  color: #252d72;
+  font-size: 25px;
+  margin: 0px;
+}
+.add:hover {
+  color: #c33764;
+}
+.edit {
+  background-color: inherit;
+  color: white;
+}
+.edit:hover {
+  color: #00b7ff;
+}
+.delete {
+  background-color: inherit;
+  color: white;
+}
+.delete:hover {
+  color: #c33764;
+}
+.cut {
+  text-decoration: line-through;
+  color: rgb(0, 0, 0);
+  opacity: 50%;
+  box-shadow: none;
+}
+#hide {
+  visibility: hidden;
+}
+.swapOut {
+  background-color: rgb(255, 0, 0);
+  transform: translateX(5rem);
+  opacity: 0;
+}
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.781);
+  box-shadow: 5px 0.1px 20px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  text-align: left;
+  padding-top: 150px;
+  overflow-x: hidden;
+}
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #252d72;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: rgba(255, 255, 255, 0.384);
+  color: #9ba5ff;
+}
+main {
+  margin-left: 50px;
+}
+.progress {
+  height: 20px;
+  border-radius: 10px;
+  background-color: white;
+  margin-left: 10px;
+}
+.progress2 {
+  display: flex;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, #c471ed, #00b7ff);
+  font-size: 15px;
+  color: white;
+  font-family: sans-serif;
+}
